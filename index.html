@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Library</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="reset.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header-section"><span>My Library</span></div>
+    <div class="add-section" id="add-section">
+      <button id="button-open-form" onclick="displayForm()">+</button>
+    </div>
+    <div class="form-section" id="form-section">
+      <form action="">
+        <ul>
+          <div class="field">
+            <li><label for="title">Title</label><input name="title" id="title" type="text"></li>
+          </div>
+          <div class="field">
+            <li>
+              <label for="author">Author</label><input name="author" id="author" type="text">
+            </li>
+          </div>
+          <div class="field">
+            <li><label for="pages">Pages</label><input name="pages" id="pages" type="number" min="1"></li>
+          </div>
+          <div class="field">
+            <li><label for="read">Read</label><input id="read" name="read" type="checkbox"></li>
+          </div>
+          <div class="field-submit">
+            <li><button type="button" id="button-add-book" onclick="addToLibrary()">Add Book to Library</button></li>
+          </div>
+        </ul>
+      </form>
+    </div>
+    <div class="library-section">
+      <div class="library-title">
+        <span>Title</span>
+        <span>Author</span>
+        <span>Pages</span>
+        <span>Read</span>
+      </div>
+      <div class="library-content" id="library-content">
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
