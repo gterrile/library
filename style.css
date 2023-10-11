@@ -1,5 +1,6 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #F1EFEF;
 }
 
 li {
@@ -14,12 +15,12 @@ ul {
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.7fr 0.35fr 2fr 4fr;
+  grid-template-rows: 90px 0.5fr 2fr 4fr;
   height: 100vh;
 }
 
 .header-section {
-  background-color: lavender;
+  background-color: #CCC8AA;
   font-size: 2rem;
   display: flex;
   justify-content: center;
@@ -27,22 +28,34 @@ ul {
   font-weight: 700;
 }
 
+.round-button {
+  font-size: 1.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  border: none;
+}
+
+.round-button:hover {
+  cursor: pointer;
+}
+
 .add-section {
-  background-color: lightgray;
+  background-color: #CCC8AA;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .form-section {
-  background-color: rgb(127, 47, 47);
+  background-color: #CCC8AA;
   grid-template-rows: 1fr;
   display: none;
+  padding-top: 20px;
 }
 
 .form-section ul {
-  padding-top: 15px;
-  background-color: lightgray;
+  background-color: #CCC8AA;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1.5fr;
@@ -71,46 +84,44 @@ ul {
   align-items: center;
 }
 
-#button-add-book {
-  height: 2rem;
-  width: 14.5rem;
-}
-
 input {
-  height: 1.5rem;
+  height: 1.7rem;
+  border-radius: 3px;
+  border: none;
 }
 
 .library-section {
-  background-color: lightgoldenrodyellow;
+  background-color: #F1EFEF;
   display: grid;
-  grid-template-rows: 1.5rem 1fr
+  grid-template-rows: 2rem 1fr
 }
 
 .library-title {
   display: grid;
   width: 100%;
-  border: 1px solid red;
-  grid-template-columns: 3fr 3fr 1.5fr 1fr;
+  grid-template-columns: 3fr 3fr 1.5fr 1fr 1fr;
   align-content: center;
+  background-color: #f0f0f0;
 }
 
 .library-title span {
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
 .library-content {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 0.75rem;
 }
 
 .book-container {
   display: grid;
   width: 100%;
-  height: 3rem;
-  border: 1px solid blue;
+  height: 2.5rem;
+  background-color: #dfdfdf;
   grid-template-rows: 1fr;
-  grid-template-columns: 3fr 3fr 1.5fr 1fr;
+  grid-template-columns: 3fr 3fr 1.5fr 1fr 1fr;
 }
 
 .book-container span {
@@ -123,4 +134,36 @@ input {
 
 .book-field.title {
   font-style: italic;
+  margin-left: 15px;
+}
+
+.library-book-title {
+  margin-left: 15px;
+}
+
+.book-field.delete {
+  font-size: 1rem;
+  font-weight: 700;
+  width: 2.5rem;
+  height: 2rem;
+  background-color: #dfdfdf;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 6px;
+}
+
+.book-field.delete:hover {
+  cursor: pointer;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
 }
