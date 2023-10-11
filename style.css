@@ -20,7 +20,7 @@ ul {
 }
 
 .header-section {
-  background-color: #CCC8AA;
+  background-color: #B5CB99;
   font-size: 2rem;
   display: flex;
   justify-content: center;
@@ -41,21 +41,24 @@ ul {
 }
 
 .add-section {
-  background-color: #CCC8AA;
+  background-color: #B5CB99;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 1px;
 }
 
 .form-section {
-  background-color: #CCC8AA;
+  background-color: #B5CB99;
   grid-template-rows: 1fr;
   display: none;
   padding-top: 20px;
 }
 
 .form-section ul {
-  background-color: #CCC8AA;
+  background-color: #B5CB99;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1.5fr;
@@ -143,7 +146,7 @@ input {
   left: 10px;
 }
 
-.library-book-title {
+.library-book {
   margin-left: 15px;
 }
 
