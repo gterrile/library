@@ -87,8 +87,8 @@ function addToLibrary() {
 
 
   bookTitle.classList.add('book-field', 'title');
-  bookAuthor.classList.add('book-field');
-  bookPages.classList.add('book-field');
+  bookAuthor.classList.add('book-field', 'author');
+  bookPages.classList.add('book-field', 'pages');
   bookLabel.classList.add('book-field');
   bookDelete.classList.add('book-field', 'delete');
   bookDelete.setAttribute('id', newId);
