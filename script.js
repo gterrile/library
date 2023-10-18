@@ -1,21 +1,13 @@
-const buttonOpenForm = document.getElementById('button-open-form');
-const addSection = document.getElementById('add-section');
-const formSection = document.getElementById('form-section');
+/////////////////////////////////////////////////////////////////////
+// My Library project re-writed to use classes, and tidy up the code.
+/////////////////////////////////////////////////////////////////////
 
-const title = document.getElementById('title');
-const author = document.getElementById('author');
-const pages = document.getElementById('pages');
-const read = document.getElementById('read');
-const addBook = document.getElementById('button-add-book');
-const libraryContent = document.getElementById('library-content');
-
-const myLibrary = [];
-
-// Show add book form
 function displayForm() {
+  const addSection = document.getElementById('add-section');
+  const formSection = document.getElementById('form-section');
+
   addSection.style.display = "none";
   formSection.style.display = 'grid';
-
   //Reset form
   title.value = ' ';
   author.value = ' ';
@@ -23,18 +15,24 @@ function displayForm() {
   read.checked = false;
 }
 
-// Book Object Constructor
-function Book(id, title, author, pages, read) {
-  this.id = id;
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+class Book {
+  constructor (id, title, author, pages, read) {
+    this.id = id;
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
 }
 
-// Add to Library
 function addToLibrary() {
-  
+  const title = document.getElementById('title');
+  const author = document.getElementById('author');
+  const pages = document.getElementById('pages');
+  const read = document.getElementById('read');
+  const libraryContent = document.getElementById('library-content');
+  const myLibrary = [];
+
   // Generate book id
   const newId = myLibrary.length;
 
@@ -63,12 +61,14 @@ function addToLibrary() {
   checkBox.setAttribute('type', 'checkbox');
   checkBox.setAttribute('id', `read_${newId}`);
   checkBox.setAttribute('name', 'read');
+  
   if (read.checked) {
     checkBox.checked = true;
   }
   else {
     checkBox.checked = false;
   }
+  
   const readSpan = document.createElement('span');
   readSpan.classList.add('slider','round');  
   bookLabel.appendChild(checkBox);
@@ -116,6 +116,5 @@ function addToLibrary() {
   // Reset page display
   formSection.style.display = 'none';
   addSection.style.display = 'grid';
-
 }
 
