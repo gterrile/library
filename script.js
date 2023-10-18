@@ -2,6 +2,36 @@
 // My Library project re-writed to use classes, and tidy up the code.
 /////////////////////////////////////////////////////////////////////
 
+const screenHandler = (function() {
+  window.addEventListener('resize', function() {
+    const bookTitles = document.querySelectorAll('.title');
+    const bookAuthor = document.querySelectorAll('.author');
+    const bookPages = document.querySelectorAll('.pages');
+    if (this.innerWidth < 580) {
+      bookTitles.forEach(item => {
+        item.textContent = 'Title:' + title.value;
+      })
+      bookAuthor.forEach(item => {
+        item.textContent = "By" + author.value;
+      })
+      bookPages.forEach(item => {
+        item.textContent = pages.value + " Pages";
+      })
+    }
+    else {
+      bookTitles.forEach(item => {
+        item.textContent = title.value;
+      })
+      bookAuthor.forEach(item => {
+        item.textContent = author.value;
+      })
+      bookPages.forEach(item => {
+        item.textContent = pages.value;
+      })
+    }
+  })
+})();
+
 function displayForm() {
   const addSection = document.getElementById('add-section');
   const formSection = document.getElementById('form-section');
@@ -26,6 +56,8 @@ class Book {
 }
 
 function addToLibrary() {
+  const addSection = document.getElementById('add-section');
+  const formSection = document.getElementById('form-section');
   const title = document.getElementById('title');
   const author = document.getElementById('author');
   const pages = document.getElementById('pages');
@@ -81,9 +113,24 @@ function addToLibrary() {
   deleteSpan.textContent = 'delete_forever'
   deleteSpan.setAttribute('style', 'font-size: 32px; color:tomato');
 
-  bookTitle.textContent = title.value;
-  bookAuthor.textContent = author.value;
-  bookPages.textContent = pages.value;
+  // Add feature to display the titles of the book properties
+  // inside the text.content while on phone mode.
+
+  if (window.innerWidth < 580) {
+      bookTitle.textContent = "Title:" + title.value;
+      bookAuthor.textContent = "By:" + author.value;
+      bookPages.textContent = pages.value + " Pages";
+  }
+  else {
+      bookTitle.textContent = title.value;
+      bookAuthor.textContent = author.value;
+      bookPages.textContent = pages.value;
+  }
+
+  // bookTitle.textContent = title.value;
+  // bookAuthor.textContent = author.value;
+  // bookPages.textContent = pages.value;
+
 
 
   bookTitle.classList.add('book-field', 'title');
